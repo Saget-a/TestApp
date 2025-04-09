@@ -9,10 +9,11 @@ import java.io.IOException;
 public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
+    //подключениеопамврыгшнмвшщоамык9г8ырга
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("hello-view.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 800, 500);
-
+    //подключение css к основе
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
 
         stage.setTitle("TEST APP");
