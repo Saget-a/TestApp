@@ -9,7 +9,11 @@ import java.io.IOException;
 public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
+<<<<<<< HEAD
     //подключениеопамврыгшнмвшщоамык9г8ырга
+=======
+    //подключение
+>>>>>>> origin/master
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("hello-view.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load(), 800, 500);
