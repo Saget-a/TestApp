@@ -3,16 +3,23 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.textboxes.Controller">
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.textboxes.Controller" prefWidth="800" prefHeight="500">
 
-    <AnchorPane prefHeight="500.0" prefWidth="100.0"  styleClass="left-border-pane"/>
+    <!-- Логин-панель -->
+    <VBox fx:id="loginPane" alignment="CENTER" spacing="10" layoutX="250" layoutY="150">
+        <TextField fx:id="usernameField" promptText="Логин" />
+        <PasswordField fx:id="passwordField" promptText="Пароль" />
+        <Button text="Войти" onAction="#handleLogin"/>
+        <Label fx:id="loginError" textFill="red"/>
+    </VBox>
 
-    <AnchorPane prefHeight="100.0" prefWidth="800.0"  styleClass="top-border-pane" />
-
-    <Label fx:id="welcomeText" layoutX="280.0" layoutY="201.0" prefHeight="17.0" prefWidth="244.0" textAlignment="RIGHT" textFill="#086a94" />
-
-    <TextField fx:id="inputField" layoutX="327.0" layoutY="259.0" promptText="Введите цыфру..." />
-
-    <Button layoutX="377.0" layoutY="319.0" onAction="#onHelloButtonClick" styleClass="transparent-rounded-button" text="Hello!" />
+    <!-- Основной контент -->
+    <AnchorPane fx:id="mainPane" visible="false">
+        <AnchorPane prefHeight="500.0" prefWidth="100.0" styleClass="left-border-pane"/>
+        <AnchorPane prefHeight="100.0" prefWidth="800.0" styleClass="top-border-pane"/>
+        <Label fx:id="welcomeText" layoutX="280.0" layoutY="201.0" textFill="#086a94" />
+        <TextField fx:id="inputField" layoutX="327.0" layoutY="259.0" promptText="Введите цыфру..." />
+        <Button layoutX="377.0" layoutY="319.0" onAction="#onHelloButtonClick" styleClass="transparent-rounded-button" text="Hello!" />
+    </AnchorPane>
 
 </AnchorPane>
