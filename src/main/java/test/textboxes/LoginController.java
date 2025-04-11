@@ -27,7 +27,7 @@ public class LoginController {
 
         if ("admin".equals(username) && "1234".equals(password)) {
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("application-view.fxml"));
                 Parent root = loader.load();
 
                 Stage stage = (Stage) usernameField.getScene().getWindow();

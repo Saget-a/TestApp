@@ -7,9 +7,14 @@
       fx:controller="test.textboxes.LoginController"
       alignment="CENTER" spacing="10" prefWidth="300" prefHeight="200"
       style="-fx-background-color: white;">
+
     <Label text="Вход в систему" style="-fx-font-size: 18;" />
+
     <TextField fx:id="usernameField" promptText="Логин" />
+
     <PasswordField fx:id="passwordField" promptText="Пароль" />
+
     <Button text="Войти" onAction="#handleLogin"/>
+    
     <Label fx:id="errorLabel" textFill="red" />
 </VBox>
