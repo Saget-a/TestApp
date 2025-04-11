@@ -11,9 +11,9 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws IOException {
 
         //подключение файла разметки
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("hello-view.fxml"));
-        //ограничение сцены
-        Scene scene = new Scene(fxmlLoader.load(), 800, 500);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login-view.fxml"));
+        //ограничение сцен
+        Scene scene = new Scene(fxmlLoader.load(), 300, 200);
         //подключение css
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         //назввание окна
