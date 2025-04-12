@@ -1,33 +1,72 @@
-.transparent-rounded-button {
+.background-pane{
+    -fx-background-color: #3f3f3f;
+}
+
+
+.login-password-field, .login-username-field {
+    -fx-background-color: #009488;;
+    -fx-border-color: rgb(100, 100, 100);
+    -fx-background-radius: 0;  
+    -fx-border-radius: 0;
+    -fx-border-width: 1px;
+}
+
+.login-button {
     -fx-background-color: transparent;
-    -fx-border-color: black;
+    -fx-border-color: rgb(255, 255, 255);
     -fx-border-width: 2px;
     -fx-border-radius: 15;
     -fx-background-radius: 15;
-    -fx-text-fill: black;
+    -fx-text-fill: rgb(255, 255, 255);
     -fx-padding: 5 15 5 15;
     -fx-cursor: hand;
 }
+.login-button:hover {
+    -fx-border-color: #009488;
+    -fx-text-fill: #009488;
+}
 
-/* Эффект при наведении */
-.transparent-rounded-button:hover {
-    -fx-background-color: gray;
-    /* лёгкий белый фон */
-    -fx-border-color: #00ffff;
-    /* цвет рамки при наведении */
-    -fx-text-fill: #00ffff;
-    /* цвет текста при наведении */
+.main-content-background-pane {
+    -fx-background-color: #3f3f3f;
 }
 
 .top-border-pane {
-    -fx-background-color: #f2955a;
+    -fx-border-width: 0px 0px 1px 0;
+    -fx-background-color: #009488;
     -fx-border-color: black;
 }
 
 .left-border-pane {
-    -fx-background-color: #f2a879;
+    -fx-background-color: #009488;
+    -fx-border-width: 0px 1px 0px 0px;
+    -fx-border-color: black;
+}
+
+.massage-field {
+    -fx-background-color: #00e1ff;
+    -fx-border-color: rgb(98, 0, 255);
+    -fx-background-radius: 0;  
+    -fx-border-radius: 0;
+    -fx-border-width: 1px;      
 }
 
 .text-lable {
-    -fx-text-fill: #00265f;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #c4f1ffe7;    
+}
+
+.transparent-rounded-button {
+    -fx-background-color: transparent;
+    -fx-border-color: rgb(255, 255, 255);
+    -fx-border-width: 2px;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-text-fill: rgb(255, 255, 255);
+    -fx-padding: 5 15 5 15;
+    -fx-cursor: hand;
+}
+
+.transparent-rounded-button:hover {
+    -fx-border-color: #009488;
+    -fx-text-fill: #009488;
 }
