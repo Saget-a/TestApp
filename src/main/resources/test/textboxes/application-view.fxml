@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="500" prefWidth="800" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.textboxes.Controller">
+<AnchorPane prefHeight="500" prefWidth="800" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.textboxes.Controller">
 
     <!-- Логин-панель -->
     <VBox fx:id="loginPane" alignment="CENTER" layoutX="326.0" layoutY="189.0" spacing="10">
@@ -17,7 +21,7 @@
     <AnchorPane fx:id="mainPane" visible="false">
         <AnchorPane prefHeight="500.0" prefWidth="100.0" styleClass="left-border-pane" />
         <AnchorPane prefHeight="100.0" prefWidth="800.0" styleClass="top-border-pane" />
-        <Label fx:id="welcomeText" layoutX="280.0" layoutY="201.0" textFill="#086a94" />
+        <Label fx:id="welcomeText" alignment="CENTER" layoutX="200.0" layoutY="200.0" prefHeight="20.0" prefWidth="400.0" styleClass="text-lable" textFill="#086a94" />
         <TextField fx:id="inputField" layoutX="327.0" layoutY="259.0" promptText="Введите цыфру..." />
         <Button layoutX="377.0" layoutY="319.0" onAction="#onHelloButtonClick" styleClass="transparent-rounded-button" text="Hello!" />
     </AnchorPane>

@@ -22,7 +22,7 @@
             <artifactId>postgresql</artifactId>
             <version>42.7.3</version>
         </dependency>
-        
+        <!--подключение javaXF --> 
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -46,7 +46,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
+    <!--тут мавен живёт мне переделать нужно было -->
     <build>
         <plugins>
             <plugin>

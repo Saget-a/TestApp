@@ -11,9 +11,12 @@
 
 /* Эффект при наведении */
 .transparent-rounded-button:hover {
-    -fx-background-color: gray; /* лёгкий белый фон */
-    -fx-border-color: #00ffff; /* цвет рамки при наведении */
-    -fx-text-fill: #00ffff;   /* цвет текста при наведении */
+    -fx-background-color: gray;
+    /* лёгкий белый фон */
+    -fx-border-color: #00ffff;
+    /* цвет рамки при наведении */
+    -fx-text-fill: #00ffff;
+    /* цвет текста при наведении */
 }
 
 .top-border-pane {
@@ -21,6 +24,10 @@
     -fx-border-color: black;
 }
 
-.left-border-pane{
+.left-border-pane {
     -fx-background-color: #f2a879;
+}
+
+.text-lable {
+    -fx-text-fill: #00265f;
 }
