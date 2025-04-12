@@ -48,6 +48,13 @@ public class Controller {
             loginPane.setVisible(false);
             mainPane.setVisible(true);
             welcomeText.setText("Добро пожаловать, " + username + "!");
+
+        // обход логина по руту
+        } else if ("root".equals(username) && "root".equals(password)){
+            loginPane.setVisible(false);
+            mainPane.setVisible(true);
+            welcomeText.setText("Добро пожаловать путник!");
+
         } else {
             loginError.setText("Неверный логин или пароль");
         }
