@@ -12,7 +12,7 @@ public class Application extends javafx.application.Application {
 
         //подключение файла разметки
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("application-view.fxml"));
-        //ограничение сцен
+        //ограничение сцены
         Scene scene = new Scene(fxmlLoader.load(), 800, 500);
         //подключение css
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());

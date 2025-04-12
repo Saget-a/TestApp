@@ -40,7 +40,7 @@ public class Controller {
 
     @FXML
     private Label registerStatus;
-    
+
     @FXML
     private void switchToRegister() {
         loginPane.setVisible(false);
