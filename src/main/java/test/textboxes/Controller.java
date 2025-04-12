@@ -39,13 +39,12 @@ public class Controller {
             welcomeText.setText("Пожалуйста, введите корректное число");
         }
     }
-
-    @FXML
-    private void handleLogin() {
+    
+    public void handleLogin() {
         String username = usernameField.getText();
         String password = passwordField.getText();
-
-        if ("admin".equals(username) && "1234".equals(password)) {
+    
+        if (Database.checkLogin(username, password)) {
             loginPane.setVisible(false);
             mainPane.setVisible(true);
             welcomeText.setText("Добро пожаловать, " + username + "!");
