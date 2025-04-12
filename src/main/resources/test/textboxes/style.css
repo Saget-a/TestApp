@@ -2,8 +2,7 @@
     -fx-background-color: #3f3f3f;
 }
 
-
-.login-password-field, .login-username-field {
+.login-password-field, .login-username-field, .registration-username-field, .registration-password-field {
     -fx-background-color: #009488;;
     -fx-border-color: rgb(100, 100, 100);
     -fx-background-radius: 0;  
@@ -11,19 +10,30 @@
     -fx-border-width: 1px;
 }
 
-.login-button {
+.login-button, .registration-button {
     -fx-background-color: transparent;
     -fx-border-color: rgb(255, 255, 255);
     -fx-border-width: 2px;
     -fx-border-radius: 15;
     -fx-background-radius: 15;
-    -fx-text-fill: rgb(255, 255, 255);
+    -fx-text-fill: #ffffff;
     -fx-padding: 5 15 5 15;
     -fx-cursor: hand;
 }
-.login-button:hover {
+
+.login-button:hover, .registration-button:hover  {
     -fx-border-color: #009488;
     -fx-text-fill: #009488;
+}
+
+.login-label, .registration-label {
+    -fx-text-fill: #ffffff;
+}
+
+.switch-to-register-button, .switch-to-login-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-cursor: hand;
 }
 
 .main-content-background-pane {

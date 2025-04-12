@@ -30,6 +30,30 @@ public class Controller {
     private Label loginError;
 
     @FXML
+    private VBox registerPane;
+
+    @FXML
+    private TextField registerUsername;
+
+    @FXML
+    private PasswordField registerPassword;
+
+    @FXML
+    private Label registerStatus;
+    
+    @FXML
+    private void switchToRegister() {
+        loginPane.setVisible(false);
+        registerPane.setVisible(true);
+    }
+
+    @FXML
+    private void switchToLogin() {
+        loginPane.setVisible(true);
+        registerPane.setVisible(false);
+    }
+
+    @FXML
     protected void onHelloButtonClick() {
         try {
             int number = Integer.parseInt(inputField.getText());
@@ -40,6 +64,7 @@ public class Controller {
         }
     }
     
+    @FXML
     public void handleLogin() {
         String username = usernameField.getText();
         String password = passwordField.getText();
@@ -57,6 +82,29 @@ public class Controller {
 
         } else {
             loginError.setText("Неверный логин или пароль");
+        }
+    }
+
+    @FXML
+    private void handleRegister() {
+        String username = registerUsername.getText();
+        String password = registerPassword.getText();
+
+        if (username.isEmpty() || password.isEmpty()) {
+            registerStatus.setText("Заполните все поля.");
+            return;
+        }
+
+        boolean success = Database.addUser(username, password);
+        if (success) {
+            registerStatus.setText("Регистрация успешна!");
+            registerStatus.setTextFill(javafx.scene.paint.Color.GREEN);
+            // Можно скрыть форму и показать логин
+            registerPane.setVisible(false);
+            loginPane.setVisible(true);
+        } else {
+            registerStatus.setText("Ошибка регистрации (возможно, пользователь уже существует).");
+            registerStatus.setTextFill(javafx.scene.paint.Color.RED);
         }
     }
 }
