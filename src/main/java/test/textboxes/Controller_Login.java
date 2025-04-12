@@ -1,24 +1,21 @@
 package test.textboxes;
 
+import java.io.IOException;
+
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
-public class Controller {
-    @FXML
-    private Label welcomeText;
-
-    @FXML
-    private TextField inputField;
+public class Controller_Login {
 
     @FXML
     private VBox loginPane;
-
-    @FXML
-    private AnchorPane mainPane;
 
     @FXML
     private TextField usernameField;
@@ -28,7 +25,7 @@ public class Controller {
 
     @FXML
     private Label loginError;
-
+    
     @FXML
     private VBox registerPane;
 
@@ -54,32 +51,28 @@ public class Controller {
     }
 
     @FXML
-    protected void onHelloButtonClick() {
-        try {
-            int number = Integer.parseInt(inputField.getText());
-            int result = integer.square(number);
-            welcomeText.setText("number: " + result);
-        } catch (NumberFormatException e) {
-            welcomeText.setText("Пожалуйста, введите корректное число");
-        }
-    }
-    
-    @FXML
     public void handleLogin() {
         String username = usernameField.getText();
         String password = passwordField.getText();
     
-        if (Database.checkLogin(username, password)) {
-            loginPane.setVisible(false);
-            mainPane.setVisible(true);
-            welcomeText.setText("Добро пожаловать, " + username + "!");
-
-        // обход логина по руту
-        } else if ("root".equals(username) && "root".equals(password)){
-            loginPane.setVisible(false);
-            mainPane.setVisible(true);
-            welcomeText.setText("Добро пожаловать путник!");
-
+        if (Database.checkLogin(username, password) || ("root".equals(username) && "root".equals(password))) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("application-view.fxml"));
+                Parent root = loader.load();
+    
+                Controller_App Controller_App = loader.getController();
+                Controller_App.setWelcomeMessage("Добро пожаловать, " + username + "!");
+    
+                Stage stage = (Stage) usernameField.getScene().getWindow();
+                Scene scene = new Scene(root, 800, 500);
+                scene.getStylesheets().add(getClass().getResource("app_style.css").toExternalForm());
+                stage.setScene(scene);
+                stage.show();
+    
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+    
         } else {
             loginError.setText("Неверный логин или пароль");
         }

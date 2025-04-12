@@ -7,33 +7,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="500" prefWidth="800" styleClass="background-pane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.textboxes.Controller">
-
-    <!-- Логин-панель -->
-    <VBox fx:id="loginPane" alignment="CENTER" layoutX="300.0" layoutY="160.0" spacing="15" prefHeight="160.0" prefWidth="200.0" styleClass="background-pane">
-        <Label style="-fx-font-size: 18;" text="Login" styleClass="login-label"/>
-        <TextField fx:id="usernameField" promptText="Логин" styleClass="login-username-field" />
-        <PasswordField fx:id="passwordField" promptText="Пароль" styleClass="login-password-field" />
-        <Button onAction="#handleLogin" styleClass="login-button" text="Войти" />
-        <Label fx:id="loginError" textFill="red" />
-        <Button onAction="#switchToRegister" text="Нет аккаунта? Зарегистрироваться" styleClass="switch-to-register-button" />
-    </VBox>
-
-    <!-- Панель регистрации-->
-    <VBox fx:id="registerPane" alignment="CENTER" layoutX="300.0" layoutY="160.0" prefHeight="200.0" prefWidth="200.0" spacing="15" visible="false" >
-
-        <Label style="-fx-font-size: 18;" text="Registration" styleClass="registration-label"/>
-
-        <TextField fx:id="registerUsername" promptText="Имя пользователя" styleClass="registration-username-field" />
-        <PasswordField fx:id="registerPassword" promptText="Пароль" styleClass="registration-password-field"/>
-
-        <Button onAction="#handleRegister" text="Зарегистрироваться" styleClass="registration-button" />
-        <Label fx:id="registerStatus" textFill="red" />
-        <Button onAction="#switchToLogin" text="Back to Login" styleClass="switch-to-login-button"/>
-    </VBox>
+<AnchorPane prefHeight="500" prefWidth="800" styleClass="background-pane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.textboxes.Controller_App">
 
     <!-- Основной контент -->
-    <AnchorPane fx:id="mainPane" styleClass="main-content-background-pane" visible="false">
+    <AnchorPane fx:id="mainPane" styleClass="main-content-background-pane" >
         <AnchorPane prefHeight="100.0" prefWidth="800.0" styleClass="top-border-pane" />
         <AnchorPane prefHeight="500.0" prefWidth="100.0" styleClass="left-border-pane" />
 
