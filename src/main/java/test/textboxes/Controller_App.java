@@ -15,7 +15,6 @@ public class Controller_App {
     @FXML
     private AnchorPane mainPane;
     
-    
     @FXML 
     public void setWelcomeMessage(String message) {
         welcomeText.setText(message);
