@@ -1,6 +1,11 @@
 package test.textboxes;
 
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,10 +15,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 public class Controller_Login {
 
@@ -69,6 +70,7 @@ public class Controller_Login {
                 Scene scene = new Scene(root, 800, 500);
                 scene.getStylesheets().add(getClass().getResource("app_style.css").toExternalForm());
                 stage.setScene(scene);
+                stage.setResizable(true);
                 stage.show();
             } else {
                 loginError.setText("Неверный логин или пароль");
