@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="500" prefWidth="800" styleClass="background-pane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.textboxes.Controller_App">
+
+    <!-- Основной контент -->
+    <AnchorPane fx:id="mainPane" styleClass="main-content-background-pane" >
+        <AnchorPane prefHeight="100.0" prefWidth="800.0" styleClass="top-border-pane" />
+        <AnchorPane prefHeight="500.0" prefWidth="100.0" styleClass="left-border-pane" />
+
+        <VBox alignment="CENTER" layoutX="300.0" layoutY="200.0" prefHeight="200.0" prefWidth="300.0" spacing="20">
+            <children>
+                <Label fx:id="welcomeText" alignment="CENTER" prefHeight="20.0" prefWidth="300.0" styleClass="text-lable" />
+                <TextField fx:id="inputField" promptText="Введите цыфру..." styleClass="massage-field" stylesheets="@style.css" />
+                <Button onAction="#onHelloButtonClick" styleClass="transparent-rounded-button" text="do something" />
+            </children>
+        </VBox>
+    </AnchorPane>
+
+</AnchorPane>
