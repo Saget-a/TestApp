@@ -75,7 +75,7 @@ public class Controller_Login {
             } else {
                 loginError.setText("Неверный логин или пароль");
             }
-
+ 
         } catch (Exception e) {
             e.printStackTrace();
             loginError.setText("Ошибка соединения с сервером");
