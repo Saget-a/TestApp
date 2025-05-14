@@ -1,26 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
 
-<AnchorPane prefHeight="500" prefWidth="800" styleClass="background-pane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.textboxes.Controller_App">
+<AnchorPane fx:id="mainPane" prefHeight="600" prefWidth="1200" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.textboxes.Controller_App">
+    <VBox spacing="10">
+        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
 
-    <!-- Основной контент -->
-    <AnchorPane fx:id="mainPane" styleClass="main-content-background-pane" >
-        <AnchorPane prefHeight="100.0" prefWidth="800.0" styleClass="top-border-pane" />
-        <AnchorPane prefHeight="500.0" prefWidth="100.0" styleClass="left-border-pane" />
+        <!-- Верхня панель навігації -->
+        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-background-color: #f0f0f0; -fx-padding: 10;">
+            <Label text="🛒 YourFood" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+            <TextField fx:id="searchField" promptText="Пошук товарів..." HBox.hgrow="ALWAYS" onKeyTyped="#handleLoadCatalog" />
+            <Button text="Пошук" onAction="#handleLoadCatalog" />
+            <Button text="Додати оголошення" onAction="#showAddProductPane" />
+            <Button text="Вийти" onAction="#handleLogout" />
+            <Button text="Переглянути підписки" onAction="#openSubscriptionsWindow"/>
 
-        <VBox alignment="CENTER" layoutX="300.0" layoutY="200.0" prefHeight="200.0" prefWidth="300.0" spacing="20">
-            <children>
-                <Label fx:id="welcomeText" alignment="CENTER" prefHeight="20.0" prefWidth="300.0" styleClass="text-lable" />
-                <TextField fx:id="inputField" promptText="Введите цыфру..." styleClass="massage-field" stylesheets="@style.css" />
-                <Button onAction="#onHelloButtonClick" styleClass="transparent-rounded-button" text="do something" />
-            </children>
-        </VBox>
-    </AnchorPane>
+        </HBox>
 
+        <SplitPane orientation="HORIZONTAL" dividerPositions="0.35, 0.60">
+            <!-- Ліва частина: список товарів -->
+            <AnchorPane>
+                <VBox spacing="5" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+                    <Label text="Каталог товарів" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                    <VBox fx:id="productListContainer" spacing="10" prefWidth="600" />
+
+                </VBox>
+            </AnchorPane>
+
+            <VBox fx:id="subscriptionPane" spacing="10" visible="false"
+                  style="-fx-background-color: #f8f8f8; -fx-padding: 10;">
+                <Label text="Оформити підписку" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                <TextField fx:id="subProductField" promptText="Назва товару" />
+                <Label fx:id="productErrorLabel" textFill="red" visible="false" />
+                <TextField fx:id="subTypeField" promptText="Тип доставки" />
+                <TextField fx:id="subAddressField" promptText="Адреса доставки" />
+                <TextField fx:id="subContactField" promptText="Контактна інформація" />
+                <TextField fx:id="subFrequencyField" promptText="Наприклад: щотижня, щомісяця" />
+                <Button text="Підтвердити підписку" onAction="#handleCreateSubscription" />
+            </VBox>
+
+
+
+
+            <!-- Права частина: додавання товару -->
+            <AnchorPane prefWidth="400">
+                <VBox fx:id="addProductPane" spacing="8" layoutX="0" layoutY="0" visible="false" style="-fx-background-color: #fafafa;" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+                    <Label text="Створення товару" style="-fx-font-size: 16; -fx-font-weight: bold;" />
+                    <TextField fx:id="productNameField" promptText="Назва товару" />
+                    <TextField fx:id="amountField" promptText="Кількість" />
+                    <TextField fx:id="priceField" promptText="Ціна" />
+                    <TextField fx:id="descriptionField" promptText="Опис товару" />
+                    <HBox spacing="10">
+                        <Button text="Додати товар" onAction="#handleAddProduct" />
+                        <Button text="Скасувати" onAction="#hideAddProductPane" />
+                    </HBox>
+                </VBox>
+            </AnchorPane>
+        </SplitPane>
+
+
+    </VBox>
 </AnchorPane>

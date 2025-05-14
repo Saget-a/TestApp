@@ -65,7 +65,7 @@ public class Controller_Login {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("application-view.fxml"));
                 Parent root = loader.load();
                 Controller_App Controller_App = loader.getController();
-                Controller_App.setWelcomeMessage("Добро пожаловать, " + username + "!");
+                Controller_App.setUsername(username);
                 Stage stage = (Stage) usernameField.getScene().getWindow();
                 Scene scene = new Scene(root, 800, 500);
                 scene.getStylesheets().add(getClass().getResource("app_style.css").toExternalForm());
